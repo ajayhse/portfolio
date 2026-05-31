@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajay Mishra · Data Analytics Engineer</title>
+  <meta name="description" content="Senior Data Analytics Engineer — 6+ years in SQL, dbt, Snowflake, Power BI, Azure. Ask me anything via AI chat." />
+  <meta property="og:title" content="Ajay Mishra · Portfolio" />
+  <meta property="og:description" content="Senior Data Analytics Engineer. Chat with my AI portfolio assistant." />
+  <meta property="og:image" content="profile.jpg" />
+  <link rel="icon" href="profile.jpg" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0b0f1a;
+      --bg2: #111827;
+      --bg3: #1a2235;
+      --border: rgba(255,255,255,0.08);
+      --border2: rgba(255,255,255,0.14);
+      --text: #f0f4ff;
+      --text2: #8b9dbf;
+      --text3: #4d607a;
+      --accent: #3b82f6;
+      --accent2: #60a5fa;
+      --accent-glow: rgba(59,130,246,0.18);
+      --green: #22c55e;
+      --card: #141d2e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(59,130,246,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(99,102,241,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1px;
+      background: var(--accent2);
+    }
+
+    .hero-name {
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .hero-name span {
+      color: var(--accent);
+      display: block;
+    }
+
+    .hero-role {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text2);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .hero-role strong { color: var(--text); font-weight: 500; }
+
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 40px;
+    }
+    .badge {
+      font-size: 11.5px; font-weight: 500;
+      padding: 5px 12px;
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      color: var(--text2);
+      background: rgba(255,255,255,0.03);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .hero-cta {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .btn-primary {
+      padding: 13px 28px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px; font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+
+    .btn-ghost {
+      padding: 13px 24px;
+      background: transparent;
+      color: var(--text2);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px; font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 80px 80px 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .profile-img-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .profile-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: brightness(0.92);
+    }
+    .profile-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, var(--card));
+    }
+
+    .profile-info {
+      padding: 16px 20px 20px;
+    }
+    .profile-name-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .profile-name { font-size: 18px; font-weight: 600; }
+    .online-badge {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; color: var(--green);
+    }
+    .online-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+
+    .profile-loc { font-size: 12.5px; color: var(--text2); margin-bottom: 14px; }
+
+    .profile-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; margin-bottom: 16px;
+    }
+    .pstat {
+      text-align: center;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 6px;
+    }
+    .pstat-num { font-size: 18px; font-weight: 700; color: var(--accent2); }
+    .pstat-label { font-size: 10px; color: var(--text3); margin-top: 2px; }
+
+    .profile-links {
+      display: flex; gap: 8px;
+    }
+    .plink {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 9px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 12px; font-weight: 500;
+      transition: all 0.15s;
+    }
+    .plink:hover { border-color: var(--accent); color: var(--accent2); }
+
+    /* ── CHAT SECTION ── */
+    #chat {
+      padding: 80px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent2);
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 12px;
+    }
+    .section-label::before { content: ''; width: 20px; height: 1px; background: var(--accent2); }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      font-size: 15px; color: var(--text2); margin-bottom: 40px;
+    }
+
+    .chatbox {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .chatbox-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+    .chat-avatar-sm {
+      width: 36px; height: 36px; border-radius: 50%; overflow: hidden;
+      border: 1px solid var(--border2);
+    }
+    .chat-avatar-sm img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+    .chatbox-messages {
+      height: 460px;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex; flex-direction: column; gap: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border2) transparent;
+    }
+
+    .cmsg { display: flex; align-items: flex-start; gap: 10px; }
+    .cmsg.user { flex-direction: row-reverse; }
+
+    .cmsg-av {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 600; flex-shrink: 0;
+      overflow: hidden;
+    }
+    .cmsg-av.ajay { border: 1px solid var(--border2); }
+    .cmsg-av.ajay img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .cmsg-av.you { background: rgba(59,130,246,0.2); color: var(--accent2); }
+
+    .cmsg-bubble {
+      max-width: 75%;
+      padding: 11px 15px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .cmsg.ajay .cmsg-bubble {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 4px 14px 14px 14px;
+      color: var(--text);
+    }
+    .cmsg.user .cmsg-bubble {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 14px 4px 14px 14px;
+    }
+    .cmsg-bubble a { color: var(--accent2); text-decoration: underline; }
+
+    .typing-dots { display: flex; align-items: center; gap: 4px; padding: 4px 0; }
+    .typing-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--text3);
+      animation: bounce 1.2s infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%,60%,100% { transform: translateY(0); opacity: 0.5; }
+      30% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .chips-row {
+      display: flex; flex-wrap: wrap; gap: 7px;
+      padding: 0 20px 14px;
+    }
+    .chip {
+      font-size: 12px; font-weight: 500;
+      padding: 6px 13px;
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      cursor: pointer;
+      color: var(--text2);
+      background: transparent;
+      font-family: 'Sora', sans-serif;
+      transition: all 0.15s;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent2); background: var(--accent-glow); }
+
+    .chat-input-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+    }
+    .chat-input {
+      flex: 1;
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border2);
+      border-radius: 24px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .chat-input::placeholder { color: var(--text3); }
+    .chat-input:focus { border-color: var(--accent); }
+
+    .send-btn {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border: none; border-radius: 50%;
+      color: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      font-size: 16px;
+    }
+    .send-btn:hover { background: #2563eb; transform: scale(1.05); }
+    .send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    /* ── SKILLS ── */
+    #skills {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .skill-card:hover { border-color: var(--border2); }
+    .skill-icon {
+      font-size: 22px; margin-bottom: 10px;
+    }
+    .skill-category { font-size: 12px; font-weight: 600; color: var(--accent2); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .stag {
+      font-size: 11.5px;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text2);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-name { font-size: 14px; font-weight: 600; color: var(--text2); }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-link {
+      font-size: 13px; color: var(--text3);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: var(--accent2); }
+
+    /* ── QUESTION LOG ── */
+    #qlog {
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .qlog-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+    .qlog-item {
+      font-size: 12.5px;
+      color: var(--text2);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; gap: 12px;
+    }
+    .qlog-item:last-child { border-bottom: none; }
+    .qlog-time { color: var(--text3); font-size: 11px; white-space: nowrap; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 24px 40px; }
+      .hero-right { padding: 0 24px 60px; }
+      #chat, #skills, #qlog { padding: 60px 20px; }
+      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-lines"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Available for opportunities</div>
+    <h1 class="hero-name">
+      Ajay<br>
+      <span>Mishra</span>
+    </h1>
+    <p class="hero-role">
+      <strong>Senior Data Analytics Engineer</strong><br>
+      6+ years · Snowflake · dbt · Power BI · Azure · Microsoft Fabric
+    </p>
+    <div class="hero-badges">
+      <span class="badge">SQL</span>
+      <span class="badge">Snowflake</span>
+      <span class="badge">dbt</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Azure Databricks</span>
+      <span class="badge">Python</span>
+      <span class="badge">MS Fabric</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#chat" class="btn-primary">💬 Chat with my AI</a>
+      <a href="https://www.linkedin.com/in/ajay-mishra-684653b6/" target="_blank" class="btn-ghost">LinkedIn →</a>
+      <a href="https://github.com/ajayhse" target="_blank" class="btn-ghost">GitHub →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-img-wrap">
+        <img src="profile.jpg" alt="Ajay Mishra at Eiffel Tower, Paris" />
+      </div>
+      <div class="profile-info">
+        <div class="profile-name-row">
+          <span class="profile-name">Ajay Mishra</span>
+          <span class="online-badge"><span class="online-dot"></span> Open to work</span>
+        </div>
+        <div class="profile-loc">📍 Italy · Originally from Prayagraj, India</div>
+        <div class="profile-stats">
+          <div class="pstat"><div class="pstat-num">6+</div><div class="pstat-label">Years Exp</div></div>
+          <div class="pstat"><div class="pstat-num">3x</div><div class="pstat-label">MS Certified</div></div>
+          <div class="pstat"><div class="pstat-num">40%</div><div class="pstat-label">Query Speed↑</div></div>
+        </div>
+        <div class="profile-links">
+          <a href="https://www.linkedin.com/in/ajay-mishra-684653b6/" target="_blank" class="plink">🔗 LinkedIn</a>
+          <a href="https://github.com/ajayhse" target="_blank" class="plink">🐙 GitHub</a>
+          <a href="mailto:ajaymishrahiet@gmail.com" class="plink">✉️ Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+<section id="chat">
+  <div class="section-label">AI Portfolio</div>
+  <h2 class="section-title">Ask Me Anything</h2>
+  <p class="section-sub">Powered by Claude AI — ask about my experience, skills, projects, or even my friends from Prayagraj 😄</p>
+
+  <div class="chatbox">
+    <div class="chatbox-header">
+      <div class="chat-avatar-sm">
+        <img src="profile.jpg" alt="Ajay" />
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:600;">Ajay Mishra · AI Assistant</div>
+        <div style="font-size:11px;color:#22c55e;">● Online</div>
+      </div>
+    </div>
+
+    <div class="chatbox-messages" id="messages">
+      <div class="cmsg ajay">
+        <div class="cmsg-av ajay"><img src="profile.jpg" alt="AM" /></div>
+        <div class="cmsg-bubble">
+          Hey! 👋 I'm Ajay — Senior Data Analytics Engineer based in Italy 🇮🇹, originally from <strong>Prayagraj, India</strong>. I've spent 6+ years building data pipelines, dashboards, and BI platforms across finance, iGaming, and tech.<br><br>
+          Ask me anything — my career, tech stack, certifications, travel stories, or my squad back home! 😄
+        </div>
+      </div>
+    </div>
+
+    <div class="chips-row" id="chips">
+      <button class="chip" onclick="chip(this)">🛠️ Tech stack</button>
+      <button class="chip" onclick="chip(this)">💼 Work history</button>
+      <button class="chip" onclick="chip(this)">🏆 Certifications</button>
+      <button class="chip" onclick="chip(this)">🏠 Tell me about Prayagraj</button>
+      <button class="chip" onclick="chip(this)">👫 Who are your friends?</button>
+      <button class="chip" onclick="chip(this)">📊 Biggest achievements</button>
+      <button class="chip" onclick="chip(this)">📬 How to contact you?</button>
+    </div>
+
+    <div class="chat-input-row">
+      <input class="chat-input" id="ci" placeholder="Ask anything about Ajay..." onkeydown="if(event.key==='Enter')send()" />
+      <button class="send-btn" id="sb" onclick="send()">&#9658;</button>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">Skills & Technologies</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-category">Data Engineering</div>
+      <div class="skill-list">
+        <span class="stag">SQL</span><span class="stag">Snowflake</span><span class="stag">dbt</span>
+        <span class="stag">Azure Databricks</span><span class="stag">MS Fabric</span><span class="stag">ADF</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-category">BI & Reporting</div>
+      <div class="skill-list">
+        <span class="stag">Power BI</span><span class="stag">DAX</span><span class="stag">Power Apps</span>
+        <span class="stag">Star Schema</span><span class="stag">KPI Modeling</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-category">Programming</div>
+      <div class="skill-list">
+        <span class="stag">Python</span><span class="stag">SQL (Advanced)</span><span class="stag">Git</span>
+        <span class="stag">Azure DevOps</span><span class="stag">CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤝</div>
+      <div class="skill-category">Leadership</div>
+      <div class="skill-list">
+        <span class="stag">Team Lead (5 FTEs)</span><span class="stag">Sprint Planning</span>
+        <span class="stag">Stakeholder Mgmt</span><span class="stag">Requirements</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION LOG -->
+<section id="qlog">
+  <div class="section-label">Live Analytics</div>
+  <h2 class="section-title" style="font-size:22px;margin-bottom:8px;">Questions Asked Today</h2>
+  <p style="font-size:13px;color:var(--text3);margin-bottom:16px;">Real-time log of what visitors are curious about</p>
+  <div class="qlog-box" id="qlogBox">
+    <div class="qlog-item" style="color:var(--text3);font-style:italic;">No questions yet — be the first to ask something! 👆</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">© 2025 Ajay Mishra · Senior Data Analytics Engineer</div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/ajay-mishra-684653b6/" target="_blank" class="footer-link">LinkedIn</a>
+    <a href="https://github.com/ajayhse" target="_blank" class="footer-link">GitHub</a>
+    <a href="mailto:ajaymishrahiet@gmail.com" class="footer-link">ajaymishrahiet@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+const SYS = `You are Ajay Mishra's AI portfolio assistant. Speak in first person as Ajay — warm, confident, occasionally funny. Keep answers to 2-5 sentences unless detail is genuinely needed. Use some emojis naturally.
+
+ABOUT AJAY:
+- Email: ajaymishrahiet@gmail.com | Phone: +39 3519359138 (Italy) / +91 9015410709
+- Based in Italy, born and brought up in Prayagraj, India (city of Kumbh Mela, Triveni Sangam, amazing food!)
+- LinkedIn: https://www.linkedin.com/in/ajay-mishra-684653b6/
+- GitHub: https://github.com/ajayhse
+
+CAREER:
+1. Senior Consultant – Data Analytics, Eide Bailly LLP (Oct 2024–Present)
+   Pipelines on MS Fabric + Snowflake + Azure Databricks; latency cut from 6h to 30min; 40% query speedup on 10M+ rows; Power BI dashboards for fund managers; CI/CD via Azure DevOps; led 5-person team.
+2. Senior Business Analyst, Affine Analytics (Client: Microsoft) Jan–Oct 2024, Bangalore
+   Power BI + Databricks for Microsoft; managed 4-person team; 30% faster decisions; Copilot/AI dashboard integration.
+3. Business Analyst, Marfatech (Dux Group) – iGaming/Finance, Feb 2022–Aug 2023, Moscow, Russia
+   ETL + Power BI for marketing/finance/fraud; 10% churn reduction via customer segmentation in one month.
+4. Business Data Analyst, Netambit, Sep 2017–Nov 2021, Prayagraj
+   BI for customer funnels, hospital operations, conversion optimization.
+5. IT Engineer, M.H. Alshaya, Jan–Aug 2017, Bangalore
+
+EDUCATION:
+- MSc Business Analytics & Big Data – HSE Moscow (2021–2023)
+- B.Tech Computer Science – APJ Abdul Kalam Technical University (2012–2016)
+
+CERTIFICATIONS: Microsoft Fabric Analytics Engineer (DP-600), Fabric Data Engineer (DP-700), Power BI Data Analyst (PL-300), Digital Transformation (BCG), Analysis for Business Systems (U of Minnesota), HCIA Cloud (Huawei)
+
+TECH: SQL, Snowflake, dbt, Power BI (DAX, Semantic Models), Azure Databricks, MS Fabric, Python, Power Apps, Star Schema, ETL/ELT, CI/CD, Azure DevOps, Git
+
+FRIENDS (childhood/college gang from Prayagraj): Gaurav, Shubham, Navneet, Ankit, Vikas, Himanshu — roast each other, cricket, chai, road trips. Be warm and funny about them.
+
+PERSONAL: Loves travel (Paris Eiffel Tower photo!), cricket, chai, data. Moved India → Russia → Italy. Very proud of Prayagraj roots.`;
+
+const hist = [];
+let busy = false;
+
+const qlog = [];
+function logQ(q) {
+  qlog.push({ q, t: new Date().toLocaleTimeString() });
+  const box = document.getElementById('qlogBox');
+  box.innerHTML = qlog.slice(-10).reverse().map(i =>
+    `<div class="qlog-item"><span>${i.q}</span><span class="qlog-time">${i.t}</span></div>`
+  ).join('');
+}
+
+function chip(el) {
+  document.getElementById('ci').value = el.textContent.replace(/^[^\w]+/,'').trim();
+  send();
+}
+
+function scrollMsgs() {
+  const m = document.getElementById('messages');
+  m.scrollTop = m.scrollHeight;
+}
+
+function addBubble(role, html, id) {
+  const msgs = document.getElementById('messages');
+  const wrap = document.createElement('div');
+  wrap.className = 'cmsg ' + (role === 'user' ? 'user' : 'ajay');
+  if (id) wrap.id = id;
+
+  const av = document.createElement('div');
+  av.className = 'cmsg-av ' + (role === 'user' ? 'you' : 'ajay');
+  av.innerHTML = role === 'user'
+    ? 'You'
+    : '<img src="profile.jpg" alt="AM" onerror="this.parentElement.textContent=\'AM\'" />';
+
+  const bubble = document.createElement('div');
+  bubble.className = 'cmsg-bubble';
+  bubble.innerHTML = html;
+
+  if (role === 'user') { wrap.appendChild(bubble); wrap.appendChild(av); }
+  else { wrap.appendChild(av); wrap.appendChild(bubble); }
+  msgs.appendChild(wrap);
+  scrollMsgs();
+  return wrap;
+}
+
+async function send() {
+  if (busy) return;
+  const ci = document.getElementById('ci');
+  const sb = document.getElementById('sb');
+  const text = ci.value.trim();
+  if (!text) return;
+  ci.value = ''; busy = true; sb.disabled = true;
+
+  document.getElementById('chips').style.display = 'none';
+  addBubble('user', text);
+  hist.push({ role: 'user', content: text });
+  logQ(text);
+
+  const typing = addBubble('ajay', '<div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>', 'typing');
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYS,
+        messages: hist
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Oops, couldn't get a response. Try again!";
+    typing.remove();
+    hist.push({ role: 'assistant', content: reply });
+    const fmt = reply
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank">$1</a>')
+      .replace(/\n/g, '<br>');
+    addBubble('ajay', fmt);
+  } catch(e) {
+    typing.remove();
+    addBubble('ajay', "Sorry, something went wrong. Please try again! 🙏");
+  }
+  busy = false; sb.disabled = false; ci.focus();
+}
+</script>
+</body>
+</html>
